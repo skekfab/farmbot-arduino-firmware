@@ -121,6 +121,10 @@ CommandCodeEnum Command::getGCodeEnum(char *code)
   {
     return F42;
   }
+  if (strcmp(code, "F52") == 0)
+  {
+    return F52;
+  }
   if (strcmp(code, "F43") == 0)
   {
     return F43;

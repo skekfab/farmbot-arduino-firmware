@@ -139,7 +139,7 @@ F        |42    |P M       |Read a value from an arduino pin P in mode M (digita
 F        |43    |P M       |Set the I/O mode M (input=0/output=1) of a pin P in arduino
 F        |44    |P V W T M |Set the value V on an arduino pin P, wait for time T in milliseconds, set value W on the arduino pin P in mode M (digital=0/analog=1)
 F        |51    |E P V     |Set a value on the tool mount with I2C (not implemented)
-F        |52    |E P       |Read value from the tool mount with I2C (not implemented)
+F        |52    |E V       |Read value V from the tool mount with configured I2C sensor on default I2C pins
 F        |61    |P V       |Set the servo on the pin P (only pins 4, 5, 6, and 11) to the requested angle V
 F        |81    |          |Report end stop
 F        |82    |          |Report current position
@@ -382,6 +382,14 @@ ID  | Name                              | Unit      | Notes
 221 | PIN_GUARD_5_PIN_NR                | integer   |
 222 | PIN_GUARD_5_TIME_OUT              | seconds   |
 223 | PIN_GUARD_5_ACTIVE_STATE          | 0 / 1     |
+
+### List of supported I2C sensors (F52)
+
+| E | Sensor  | V | Value       |
+|---|---------|---|-------------|
+| 0 | BME 280 | 0 | Temperature |
+|   |         | 1 | Pressure    |
+|   |         | 2 | Humidity    |
 
 Pin Numbering
 -------------
